@@ -39,7 +39,8 @@ This script runs a direct, multi-iteration averaged comparison between the custo
 When running the sweep (`threads_vs_time.cpp`), the performance curve clearly demonstrates three distinct phases of parallel execution:
 
 ![Threads vs Time Taken for accumulation](Threads_vs_Time_Taken.png)
-*(Note: Be sure to upload your graph image to the repository and ensure the filename matches the link above!)*
+
+(Assuming Parallel code fraction is 0.984)
 
 * **Phase 1 (Linear Scaling):** With a low thread count (1–4), the workload is compute-bound. Scaling is nearly 1:1 as the active cores have unhindered access to L1/L2 caches and memory controllers.
 * **Phase 2 (Diminishing Returns):** As thread count increases (8–16), the system transitions to being memory-bandwidth-bound. Because simple addition is incredibly fast for modern CPUs, the cores begin processing data faster than the system RAM can supply it over the bus.
